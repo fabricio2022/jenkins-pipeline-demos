@@ -7,8 +7,7 @@ pipeline {
     stages {
         stage('Audit tools') {                        
             steps {
-                 sh "export PATH=${PATH}:${HOME}/.dotnet/tools"
-                 sh '''
+              sh '''
                   git version
                   docker version
                   dotnet --list-sdks
