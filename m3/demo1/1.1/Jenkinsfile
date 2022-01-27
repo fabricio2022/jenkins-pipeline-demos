@@ -3,12 +3,12 @@ pipeline {
     environment {
         VERSION = "0.1.0"        
         VERSION_RC = "rc.2"
-        sh "export PATH=${PATH}:${HOME}/.dotnet/tools"
     }
     stages {
         stage('Audit tools') {                        
             steps {
-                sh '''
+                 sh "export PATH=${PATH}:${HOME}/.dotnet/tools"
+                 sh '''
                   git version
                   docker version
                   dotnet --list-sdks
